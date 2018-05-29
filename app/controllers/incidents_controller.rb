@@ -1,9 +1,18 @@
-class IncidentsController < ApplicationController
-  before_action :set_incident, only: [:show, :update, :destroy]
+# frozen_string_literal: true
 
-  # GET /incidents
+class IncidentsController < ApplicationController
+  before_action :set_incident, only: %i[show update destroy]
+
+  # GET /incidents (all)
   def index
     @incidents = Incident.all
+
+    render json: @incidents
+  end
+
+  # GET /incidents for a specific user
+  def my_incidents
+    @incidents = current_user.incidents.all?
 
     render json: @incidents
   end
@@ -15,7 +24,7 @@ class IncidentsController < ApplicationController
 
   # POST /incidents
   def create
-    @incident = Incident.new(incident_params)
+    @incident = current_user.incidents.build(incident_params)
 
     if @incident.save
       render json: @incident, status: :created, location: @incident
@@ -39,13 +48,14 @@ class IncidentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_incident
-      @incident = Incident.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def incident_params
-      params.require(:incident).permit(:name, :location, :date, :robbery_type, :description, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_incident
+    @incident = current_user.incidents.find(param[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def incident_params
+    params.require(:incident).permit(:name, :location, :date, :robbery_type, :description, :user_id)
+  end
 end
