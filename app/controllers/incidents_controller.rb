@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class IncidentsController < ApplicationController
+class IncidentsController < OpenReadController
   before_action :set_incident, only: %i[show update destroy]
 
   # GET /incidents (all)
@@ -12,7 +12,7 @@ class IncidentsController < ApplicationController
 
   # GET /incidents for a specific user
   def my_incidents
-    @incidents = current_user.incidents.all?
+    @incidents = current_user.incidents.all
 
     render json: @incidents
   end
@@ -51,7 +51,7 @@ class IncidentsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_incident
-    @incident = current_user.incidents.find(param[:id])
+    @incident = current_user.incidents.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.

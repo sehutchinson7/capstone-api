@@ -10,7 +10,7 @@ curl "http://localhost:4741/incidents" \
       "name": "'"${NAME}"'",
       "location": "'"${LOCATION}"'",
       "date": "'"${DATE}"'",
-      "robbery_type": "'"${ROBBERY}"'",
+      "robbery_type": "'"${ROBBERY_TYPE}"'",
       "description": "'"${DESCRIPTION}"'",
       "user_id": "'"${USERID}"'"
     }

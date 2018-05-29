@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://localhost:4741/incidents${ID}" \
+curl "http://localhost:4741/incidents/${ID}" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
@@ -11,8 +11,7 @@ curl "http://localhost:4741/incidents${ID}" \
       "location": "'"${LOCATION}"'",
       "date": "'"${DATE}"'",
       "robbery_type": "'"${ROBBERY}"'",
-      "description": "'"${DESCRIPTION}"'",
-      "user_id": "'"${USERID}"'"
+      "description": "'"${DESCRIPTION}"'"
     }
   }'
 
