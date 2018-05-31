@@ -58,12 +58,12 @@
     <tr>
       <td align="center">GET</td>
       <td align="center"><code>/incidents</code></td>
-      <td align="center"><code>surveys#index</code></td>
+      <td align="center"><code>incidents#index</code></td>
     </tr>
     <tr>
       <td align="center">GET</td>
       <td align="center"><code>/users/store.user.id</code></td>
-      <td align="center"><code>surveys#index</code></td>
+      <td align="center"><code>incidents#index</code></td>
     </tr>
     <tr>
       <td align="center">POST</td>
