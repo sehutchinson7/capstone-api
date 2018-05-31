@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class IncidentsController < OpenReadController
+class IncidentsController < ProtectedController
   before_action :set_incident, only: %i[show update destroy]
 
   # GET /incidents (all)
