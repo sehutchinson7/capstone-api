@@ -57,12 +57,12 @@
   <tbody>
     <tr>
       <td align="center">GET</td>
-      <td align="center"><code>/incidents</code></td>
-      <td align="center"><code>incidents#index</code></td>
+      <td align="center"><code>/users</code></td>
+      <td align="center"><code>users#index</code></td>
     </tr>
     <tr>
       <td align="center">GET</td>
-      <td align="center"><code>/users/store.user.id</code></td>
+      <td align="center"><code>/incidents</code></td>
       <td align="center"><code>incidents#index</code></td>
     </tr>
     <tr>
@@ -72,13 +72,13 @@
     </tr>
     <tr>
       <td align="center">PATCH</td>
-      <td align="center"><code>/incidents/ + data.incident.id</code></td>
+      <td align="center"><code>/incidents/:id<code></td>
       <td align="center"><code>incidents#update</code></td>
     </tr>
     <tr>
       <td align="center">DELETE</td>
-      <td align="center"><code>/incidents/ + data</code></td>
-      <td align="center"><code>incidents#delete</code></td>
+      <td align="center"><code>/incidents/:id</code></td>
+      <td align="center"><code>incidents#destroy</code></td>
     </tr>
   </tbody>
   </table>
